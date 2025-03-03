@@ -2,7 +2,7 @@ name: Changes Merged Staging to main
 on:
   push:
     branches:
-      - Staging
+      - staging
 jobs:
   merge:
     runs-on: ubuntu-latest
