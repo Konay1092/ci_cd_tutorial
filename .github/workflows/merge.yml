@@ -13,7 +13,12 @@ jobs:
         run: npm install
       - name: Run tests
         run: npm test
-      - name: Merge code
-        run: git merge main
-      - name: Push code
-        run: git push origin Staging
+      - name: Configure Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+      - name: Merge feat into staging
+        run: |
+          git checkout staging
+          git merge origin/feat --no-edit
+          git push origin staging
