@@ -1,0 +1,15 @@
+name: Changes Merged Staging to main
+on:
+  push:
+    branches:
+      - Staging
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Merge code
+        run: git merge main
+      - name: Push code
+        run: git push origin Staging
