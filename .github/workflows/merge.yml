@@ -19,6 +19,6 @@ jobs:
           git config --global user.email "actions@github.com"
       - name: Merge feat into staging
         run: |
-          git checkout staging
-          git merge origin/feat --no-edit
-          git push origin staging
+          git checkout main
+          git merge origin/staging --no-edit
+          git push origin main
